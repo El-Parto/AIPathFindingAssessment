@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Waypoint : MonoBehaviour
+public class Waypoints : MonoBehaviour
 {
 
     public Vector3 Position => transform.position;
@@ -9,6 +9,8 @@ public class Waypoint : MonoBehaviour
 
 private void OnDrawGizmos()
     {
+
+        // to see where way points are)
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 0.1f);
     }
