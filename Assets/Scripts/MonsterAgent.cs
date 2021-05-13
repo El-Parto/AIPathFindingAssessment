@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class MonsterAgen : MonoBehaviour
+public class MonsterAgent : MonoBehaviour
 {
     private NavMeshAgent agentMonster;
     private MonsterWayPoint[] waypoints;
@@ -15,7 +15,7 @@ public class MonsterAgen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agentMax = gameObject.GetComponent<NavMeshAgent>();
+        agentMonster = gameObject.GetComponent<NavMeshAgent>();
         // FindObjectsOfType gets every instance of this component in the scene
         waypoints = FindObjectsOfType<MonsterWayPoint>();
     }
@@ -24,10 +24,10 @@ public class MonsterAgen : MonoBehaviour
     void Update()
     {
         // Has the agent reached it's position?
-        if (!agentMax.pathPending && agentMax.remainingDistance < 0.1f)
+        if (!agentMonster.pathPending && agentMonster.remainingDistance < 0.1f)
         {
             // Tell the agent to move to a random position in the scene waypoints
-            agentMax.SetDestination(RandomPoint.Position);
+            agentMonster.SetDestination(RandomPoint.Position);
         }
     }
 }
