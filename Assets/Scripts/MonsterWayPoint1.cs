@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Waypoints : MonoBehaviour
+public class MonsterWayPoint : MonoBehaviour
 {
 
     public Vector3 Position => transform.position;

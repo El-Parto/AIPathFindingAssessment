@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class AgentMaxwell : MonoBehaviour
+public class MonsterAgen : MonoBehaviour
 {
-    private NavMeshAgent agentMax;
+    private NavMeshAgent agentMonster;
     private MonsterWayPoint[] waypoints;
 
     // Will give us a random waypoint in the array as a variable everytime I access it
