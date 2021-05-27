@@ -12,9 +12,9 @@ NavMeshProjectSettings:
   - name: Jump
     cost: 3
   - name: SafeZone
-    cost: 2
+    cost: 10
   - name: Poisonous Swamp
-    cost: 4
+    cost: 10
   - name: 
     cost: 1
   - name: 
@@ -91,9 +91,9 @@ NavMeshProjectSettings:
       m_Flags: 0
   - serializedVersion: 2
     agentTypeID: -1372625422
-    agentRadius: 0.19
+    agentRadius: 0.1
     agentHeight: 0.4
-    agentSlope: 45
+    agentSlope: 24.6
     agentClimb: 0.05
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
