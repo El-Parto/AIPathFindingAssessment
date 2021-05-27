@@ -29,17 +29,30 @@ public class AgentMaxwell : MonoBehaviour
         if (agentMax.pathPending)
             Debug.LogWarning("Going to new path");
 
-        if (agentMax.pathStatus == NavMeshPathStatus.PathPartial)
+        if (agentMax.isPathStale)
         {
             // if the status of the path is invalid, set a new destination
             agentMax.SetDestination(RandomPoint.Position);
             Debug.LogWarning("The path was partial, and i chose a new destination");
         }
         // Has the agent reached it's position?
-        if (!agentMax.pathPending && agentMax.remainingDistance < 0.25f)
+        if (!agentMax.pathPending && agentMax.remainingDistance < 0.1f)
         {
             // Tell the agent to move to a random position in the scene waypoints
             agentMax.SetDestination(RandomPoint.Position);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if(agentMax != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(agentMax.destination, 1f);
+
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(agentMax.steeringTarget, transform.position);
+            Gizmos.DrawWireSphere(agentMax.steeringTarget, 1f);
         }
     }
 
