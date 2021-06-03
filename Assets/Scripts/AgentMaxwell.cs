@@ -9,6 +9,9 @@ public class AgentMaxwell : MonoBehaviour
     private NavMeshAgent agentMax;
     private Waypoints[] waypoints;
 
+    [SerializeField]
+    private Animator anim;
+
     // Will give us a random waypoint in the array as a variable everytime I access it
     private Waypoints RandomPoint => waypoints[Random.Range(0, waypoints.Length)];
 
@@ -23,8 +26,9 @@ public class AgentMaxwell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("Run", !agentMax.pathPending && agentMax.remainingDistance > 0.1f);
         Debugging();
-
+        
         //Logs out if a new path has been set - checking for "freezing" on path select
         if (agentMax.pathPending)
             Debug.LogWarning("Going to new path");

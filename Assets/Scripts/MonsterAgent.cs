@@ -9,6 +9,9 @@ public class MonsterAgent : MonoBehaviour
     private NavMeshAgent agentMonster;
     private MonsterWayPoint[] waypoints;
 
+    [SerializeField]
+    private Animator animator;
+
     // Will give us a random waypoint in the array as a variable everytime I access it
     private MonsterWayPoint RandomPoint => waypoints[Random.Range(0, waypoints.Length)];
 
@@ -23,6 +26,7 @@ public class MonsterAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("Run", !agentMonster.pathPending && agentMonster.remainingDistance > 0.1f);
         // Has the agent reached it's position?
         if (!agentMonster.pathPending && agentMonster.remainingDistance < 0.1f)
         {

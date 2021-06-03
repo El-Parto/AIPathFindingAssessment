@@ -23,6 +23,7 @@ public class TallBoiAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //animator.SetBool("Run", !agentMonster.pathPending && agentMonster.remainingDistance > 0.1f);
         // Has the agent reached it's position?
         if (!agentTB.pathPending && agentTB.remainingDistance < 0.1f)
         {

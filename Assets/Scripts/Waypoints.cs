@@ -13,5 +13,9 @@ public class Waypoints : MonoBehaviour
         // to see where way points are)
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 0.1f);
+        
     }
+
+
+    
 }
