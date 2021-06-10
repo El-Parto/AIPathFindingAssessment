@@ -12,12 +12,13 @@ public class MonsterAgent : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    // Will give us a random waypoint in the array as a variable everytime I access it
+    // Will give us a random waypoint in the array as a variable everytime it's accessed
     private MonsterWayPoint RandomPoint => waypoints[Random.Range(0, waypoints.Length)];
 
     // Start is called before the first frame update
     void Start()
     {
+        // gets the navMesh Agent on start
         agentMonster = gameObject.GetComponent<NavMeshAgent>();
         // FindObjectsOfType gets every instance of this component in the scene
         waypoints = FindObjectsOfType<MonsterWayPoint>();
@@ -26,6 +27,7 @@ public class MonsterAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //sets a bool in the animator to turn on running if the agent is not pending a path
         animator.SetBool("Run", !agentMonster.pathPending && agentMonster.remainingDistance > 0.1f);
         // Has the agent reached it's position?
         if (!agentMonster.pathPending && agentMonster.remainingDistance < 0.1f)

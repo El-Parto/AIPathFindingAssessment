@@ -26,6 +26,7 @@ public class AgentMaxwell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //sets a bool in the animator to turn on running if the agent is not pending a path
         anim.SetBool("Running", !agentMax.pathPending && agentMax.remainingDistance > 0.1f);
         Debugging();
         
@@ -47,18 +48,18 @@ public class AgentMaxwell : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if(agentMax != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(agentMax.destination, 1f);
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if(agentMax != null)
+    //    {
+    //        Gizmos.color = Color.green;
+    //        Gizmos.DrawWireSphere(agentMax.destination, 1f);
 
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(agentMax.steeringTarget, transform.position);
-            Gizmos.DrawWireSphere(agentMax.steeringTarget, 1f);
-        }
-    }
+    //        Gizmos.color = Color.blue;
+    //        Gizmos.DrawLine(agentMax.steeringTarget, transform.position);
+    //        Gizmos.DrawWireSphere(agentMax.steeringTarget, 1f);
+    //    }
+    //}
 
     private void Debugging()
     {
