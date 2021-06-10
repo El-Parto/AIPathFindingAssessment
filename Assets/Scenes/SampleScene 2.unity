@@ -17244,7 +17244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Maxwell
+  m_text: Maxwell Smart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17271,8 +17271,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23838,11 +23838,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6028174572844021229, guid: e81f147502e9c064cb7f8cebc28b1e03, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1007
+      value: 1004.6
       objectReference: {fileID: 0}
     - target: {fileID: 6028174572844021229, guid: e81f147502e9c064cb7f8cebc28b1e03, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 25
+      value: 44.9
       objectReference: {fileID: 0}
     - target: {fileID: 6028174572844021229, guid: e81f147502e9c064cb7f8cebc28b1e03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
