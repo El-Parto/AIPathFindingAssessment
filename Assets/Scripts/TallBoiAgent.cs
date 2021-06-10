@@ -8,6 +8,8 @@ public class TallBoiAgent : MonoBehaviour
 {
     private NavMeshAgent agentTB;
     private TallBoiWaypoint[] waypoints;
+    [SerializeField]
+    private Animator animator;
 
     // Will give us a random waypoint in the array as a variable everytime I access it
     private TallBoiWaypoint RandomPoint => waypoints[Random.Range(0, waypoints.Length)];
@@ -23,7 +25,7 @@ public class TallBoiAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //animator.SetBool("Run", !agentMonster.pathPending && agentMonster.remainingDistance > 0.1f);
+        animator.SetBool("Running", !agentTB.pathPending && agentTB.remainingDistance > 0.1f);
         // Has the agent reached it's position?
         if (!agentTB.pathPending && agentTB.remainingDistance < 0.1f)
         {

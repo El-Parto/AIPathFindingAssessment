@@ -6,11 +6,11 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentMaxwell : MonoBehaviour
 {
-    private NavMeshAgent agentMax;
-    private Waypoints[] waypoints;
+    private NavMeshAgent agentMax; //Maxwell's very own Agent
+    private Waypoints[] waypoints; //Referencing the waypointscript as an array.
 
     [SerializeField]
-    private Animator anim;
+    private Animator anim;//the Animator so that Maxwell can be animated.
 
     // Will give us a random waypoint in the array as a variable everytime I access it
     private Waypoints RandomPoint => waypoints[Random.Range(0, waypoints.Length)];
@@ -26,7 +26,7 @@ public class AgentMaxwell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("Run", !agentMax.pathPending && agentMax.remainingDistance > 0.1f);
+        anim.SetBool("Running", !agentMax.pathPending && agentMax.remainingDistance > 0.1f);
         Debugging();
         
         //Logs out if a new path has been set - checking for "freezing" on path select
